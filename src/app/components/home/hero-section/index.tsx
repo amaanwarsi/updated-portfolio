@@ -25,7 +25,7 @@ const HeroSection = () => {
                 <div className="border border-primary/10">
                     <div className="relative flex flex-col mt-32 -center xs:items-start justify-center xs:justify-between max-w-3xl mx-auto gap-10 xs:gap-3 px-4 sm:px-7 pt-22 pb-8 sm:pb-12">
                         <div className="absolute top-0 left-1/2 xs:left-7 sm:left-8 -translate-x-1/2 xs:translate-x-0 -translate-y-1/2">
-                            <Image src={"/images/hero-sec/avatar.webp"} alt="user-img" width={145} height={145} className="border-4 border-white rounded-full" />
+                            <Image src={"/images/hero-sec/avatar.webp"} alt="user-img" width={145} height={145} className="border-4 border-white rounded-full" priority />
                             <span className="absolute bottom-2.5 right-5 w-4 h-4 bg-green-500 border-2 border-white rounded-full" />
                         </div>
 
@@ -54,12 +54,7 @@ const HeroSection = () => {
                                 href="https://calendly.com/itsamaan-warsi/30min"
                                 className="flex-1 md:flex-none group bg-black text-white text-sm md:text-base px-5 py-3 md:px-6 md:py-3 rounded-full font-medium flex justify-center items-center gap-3 transition-all duration-200"
                             >
-                                <Image
-                                    src="/images/icon/gmeet-icon.svg"
-                                    alt="Gmeet Logo"
-                                    width={24}
-                                    height={24}
-                                />
+                                <Image src="/images/icon/gmeet-icon.svg" alt="Gmeet Logo" width={24} height={24} />
                                 <span>Book a free call</span>
                             </a>
 
@@ -67,12 +62,7 @@ const HeroSection = () => {
                                 href="mailto:itsamaan.warsi@gmail.com"
                                 className="group bg-white border border-gray-200 text-gray-900 px-4 py-3 md:px-6 md:py-3 rounded-full font-medium flex justify-center items-center gap-2 md:gap-3 transition-all duration-200"
                             >
-                                <Image
-                                    src="/images/icon/email-icon.svg"
-                                    alt="Email icon"
-                                    width={20}
-                                    height={20}
-                                />
+                                <Image src="/images/icon/email-icon.svg" alt="Email icon" width={20} height={20} />
                                 <span className="hidden md:inline">Email Me</span>
                             </a>
                             {/* </Link> */}

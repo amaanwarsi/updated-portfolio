@@ -38,13 +38,25 @@ const FeaturedWork = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 border-t border-primary/10">
                         {featureWork?.map((value: any, index: number) => {
                             const isRightCol = index % 2 === 1;
+                            const Tag = value?.private ? "div" : "a";
+
+                            const linkProps = !value?.private
+                                ? {
+                                    href: value?.url,
+                                    target: "_blank",
+                                    rel: "noopener noreferrer",
+                                }
+                                : {};
 
                             return (
-                                <div
+                                <Tag
                                     key={index}
-                                    className={`group flex flex-col gap-3.5 sm:gap-5 p-3.5 sm:p-6 ${isRightCol ? 'md:border-l md:border-primary/10' : ''}`}
+                                    {...linkProps}
+                                    className={`group flex flex-col gap-3.5 sm:gap-5 p-3.5 sm:p-6 
+      ${isRightCol ? "md:border-l md:border-primary/10" : ""}`}
                                 >
-                                    <a href={value?.url} target="_blank" className="overflow-hidden">
+                                    {/* IMAGE */}
+                                    <div className="overflow-hidden">
                                         <Image
                                             src={value?.image}
                                             alt={`Project cover ${value.title}`}
@@ -52,18 +64,17 @@ const FeaturedWork = () => {
                                             height={300}
                                             className="w-full h-full group-hover:scale-105 transition-all duration-300 ease-in-out"
                                         />
-                                    </a>
-                                    <div className="flex flex-col gap-1 sm:gap-2 px-2">
-                                        <a href={value?.url} target="_blank"><h4>{value?.title}</h4></a>
-                                        <div className="flex">
-                                            <p>{value?.tech?.join(', ')}</p>
-                                        </div>
                                     </div>
-                                </div>
+
+                                    {/* TEXT */}
+                                    <div className="flex flex-col gap-1 sm:gap-2 px-2">
+                                        <h4>{value?.title}</h4>
+                                        <p>{value?.tech?.join(", ")}</p>
+                                    </div>
+                                </Tag>
                             );
                         })}
                     </div>
-
                 </div>
             </div>
         </section>
